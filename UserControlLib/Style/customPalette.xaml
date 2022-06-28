@@ -1,0 +1,49 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <!--  默认风格  -->
+    <telerik:ChartPalette x:Key="defaultStyle">
+        <telerik:ChartPalette.GlobalEntries>
+            <telerik:PaletteEntry Fill="#FF21B573" Stroke="White" />
+            <telerik:PaletteEntry Fill="#FF88CA2A" Stroke="White" />
+            <telerik:PaletteEntry Fill="#FFFF921E" Stroke="White" />
+        </telerik:ChartPalette.GlobalEntries>
+    </telerik:ChartPalette>
+
+    <!--  运行状态风格  -->
+    <telerik:ChartPalette x:Key="runStatusStyle">
+        <telerik:ChartPalette.GlobalEntries>
+            <telerik:PaletteEntry Fill="#87C38E" Stroke="#87C38E" />
+            <telerik:PaletteEntry Fill="#00FFFF" Stroke="#00FFFF" />
+            <telerik:PaletteEntry Fill="#FFFF00" Stroke="#FFFF00" />
+        </telerik:ChartPalette.GlobalEntries>
+    </telerik:ChartPalette>
+
+    <!--  累计预警风格  -->
+    <telerik:ChartPalette x:Key="alarnStyle">
+        <telerik:ChartPalette.GlobalEntries>
+            <telerik:PaletteEntry Fill="#FFFF00" Stroke="#FFFF00" />
+            <telerik:PaletteEntry Fill="#FF9900" Stroke="#FF9900" />
+            <telerik:PaletteEntry Fill="#F00000" Stroke="#F00000" />
+        </telerik:ChartPalette.GlobalEntries>
+    </telerik:ChartPalette>
+
+    <!--  橙色风格  -->
+    <telerik:ChartPalette x:Key="orangeStyle">
+        <telerik:ChartPalette.GlobalEntries>
+            <telerik:PaletteEntry Fill="#FA8072" Stroke="White" />
+            <telerik:PaletteEntry Fill="#FF4500" Stroke="White" />
+            <telerik:PaletteEntry Fill="#FF7F50" Stroke="White" />
+        </telerik:ChartPalette.GlobalEntries>
+    </telerik:ChartPalette>
+
+    <!--  运行周期风格  -->
+    <telerik:ChartPalette x:Key="cycleStyle">
+        <telerik:ChartPalette.GlobalEntries>
+            <telerik:PaletteEntry Fill="#FF6666" Stroke="#FF6666" />
+            <telerik:PaletteEntry Fill="#339999" Stroke="#339999" />
+        </telerik:ChartPalette.GlobalEntries>
+    </telerik:ChartPalette>
+</ResourceDictionary>

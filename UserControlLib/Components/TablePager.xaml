@@ -1,0 +1,152 @@
+﻿<UserControl
+    x:Class="UserControlLib.Components.TablePager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WS_DBModels;component/Resources/Style/DataGridStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WS_DBModels;component/Resources/Style/ScrollBarStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WS_DBModels;component/Resources/Style/ContentMenuStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Name="tableWrapper">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="1"
+            Margin="4,2,4,4"
+            Background="#054560">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    Name="tbkCurrentPage"
+                    Margin="10,0,0,0"
+                    Foreground="#fff" />
+                <TextBlock
+                    Name="tbkTotalPage"
+                    Margin="10,0,0,0"
+                    Foreground="#fff" />
+                <TextBlock
+                    Name="tbkTotalCount"
+                    Margin="10,0,0,0"
+                    Foreground="#fff" />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Path
+                    x:Name="firstPage"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Data="M0,0 L0,10 L10,0 Z M5,5 L15,5 L5,15 Z"
+                    Fill="#18EdF3"
+                    MouseDown="firstPage_MouseDown"
+                    Stroke="Black">
+                    <Path.ToolTip>
+                        <ToolTip Width="60" Content="第一页" />
+                    </Path.ToolTip>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="-45" CenterX="8" CenterY="8" />
+                    </Path.RenderTransform>
+                </Path>
+                <Path
+                    x:Name="previousPage"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Data="M0,0 L0,10 L10,0 Z"
+                    Fill="#18EdF3"
+                    MouseDown="previousPage_MouseDown"
+                    Stroke="Black">
+                    <Path.ToolTip>
+                        <ToolTip Width="60" Content="上一页" />
+                    </Path.ToolTip>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="-45" CenterX="5" CenterY="5" />
+                    </Path.RenderTransform>
+                </Path>
+                <TextBox
+                    x:Name="tbxCurrentPage"
+                    Width="30"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    input:InputMethod.IsInputMethodEnabled="False"
+                    Background="#002C41"
+                    Foreground="#fff"
+                    KeyDown="tbxCurrentPage_KeyDown"
+                    PreviewTextInput="tbxCurrentPage_PreviewTextInput"
+                    TextAlignment="Center">
+                    <!--<TextBox.ToolTip>
+                        <ToolTip
+                            Width="60"
+                            Background="Transparent"
+                            Content="当前页"
+                            Foreground="#fff" />
+                    </TextBox.ToolTip>-->
+                </TextBox>
+                <Path
+                    x:Name="NextPage"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Data="M0,0 L0,10 L10,0 Z"
+                    Fill="#18EdF3"
+                    MouseDown="nextPage_MouseDown"
+                    Stroke="Black">
+                    <Path.ToolTip>
+                        <ToolTip Width="60" Content="下一页" />
+                    </Path.ToolTip>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="135" CenterX="5" CenterY="5" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <Path
+                    x:Name="finalPage"
+                    Margin="5,0,15,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Data="M0,0 L0,10 L10,0 Z M5,5 L15,5 L5,15 Z"
+                    Fill="#18EdF3"
+                    MouseDown="finalPage_MouseDown"
+                    Stroke="Black">
+                    <Path.ToolTip>
+                        <ToolTip Width="70" Content="最后一页" />
+                    </Path.ToolTip>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="135" CenterX="8" CenterY="8" />
+                    </Path.RenderTransform>
+                </Path>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

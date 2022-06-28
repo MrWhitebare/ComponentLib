@@ -1,0 +1,86 @@
+﻿<UserControl
+    x:Class="UserControlLib.Components.PictureViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Name="parent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Path
+            Name="pathClose"
+            Grid.Row="0"
+            Margin="0,0,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Cursor="Hand"
+            Data="M0,0 L20,20 M20,0 0,20"
+            Fill="#18EdF3"
+            MouseDown="pathClose_MouseDown"
+            Stroke="#18EdF3"
+            StrokeThickness="4"
+            ToolTip="关闭图片浏览器" />
+        <Path
+            Name="leftMove"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Cursor="Hand"
+            Data="M0,0 L0,20 L20,0 Z"
+            Fill="#18EdF3"
+            MouseDown="leftMove_MouseDown"
+            Stroke="Black"
+            ToolTip="上一张"
+            Visibility="Hidden">
+            <Path.RenderTransform>
+                <RotateTransform Angle="45" CenterX="5" CenterY="5" />
+            </Path.RenderTransform>
+        </Path>
+
+
+        <Border
+            Name="commonBorder"
+            Grid.Row="1"
+            Margin="0,1,4,8"
+            Background="Transparent"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Visibility="Hidden">
+            <Grid Name="picWrapper" MouseDown="picWrapper_MouseDown">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+        </Border>
+
+
+        <Path
+            Name="rightMove"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Cursor="Hand"
+            Data="M0,0 L0,20 L20,0 Z"
+            Fill="#18EdF3"
+            MouseDown="rightMove_MouseDown"
+            Stroke="Black"
+            ToolTip="下一张"
+            Visibility="Hidden">
+            <Path.RenderTransform>
+                <RotateTransform Angle="-135" CenterX="5" CenterY="5" />
+            </Path.RenderTransform>
+        </Path>
+
+    </Grid>
+</UserControl>
