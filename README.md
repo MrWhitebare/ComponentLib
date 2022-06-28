@@ -3,10 +3,10 @@ WPF编写的用户控件仓库
 
 ### 1. 文件夹说明
 
-> ├─Components 组件
-> ├─Modes 实体类
-> ├─Properties
-> └─Style WPF样式
+├─Components 组件
+├─Modes 实体类
+├─Properties
+└─Style WPF样式
 
 ### 2. 项目说明
 
